@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;500;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="heading">Generate a<br><span id="second-line-heading">random password</span></h1>
+        <h4 id="sub-heading">Never use an insecure password again.</h4>
+        <div class="user-input">
+            <div class="password-content">
+                <p>Number of characters (between 5 and 20):</p>
+                <input type="number" placeholder="15" id="length-input" min="5" max="20">
+            </div>
+        </div>
+        <div class="user-input">
+            <div class="password-content">
+                <p>Small letters:</p>
+                <input class="checkbox" type="checkbox" id="small-letters" onclick="toggleBtn()">
+            </div>
+            <div class="password-content">
+                <p>Capitalized letters:</p>
+                <input class="checkbox" type="checkbox" id="caps-letters" onclick="toggleBtn()">
+            </div>
+            <div class="password-content">
+                <p>Numbers:</p>
+                <input class="checkbox" type="checkbox" id="numbers" onclick="toggleBtn()">
+            </div>
+            <div class="password-content">
+                <p>Special characters:</p>
+                <input class="checkbox" type="checkbox" id="special-characters" onclick="toggleBtn()">
+            </div>
+
+
+        </div>
+        <div id="btns">
+            <button class="btn" id="generator-btn" onclick="generatePasswords()" disabled
+                title="Select the character type(s) to be used">Generate passwords</button>
+            <button class="btn" id="clear-fields-btn" onclick="clearFields()">Clear fields</button>
+        </div>
+        <hr id="line">
+        <div id="passwords">
+            <div class="password" id="password-1" onclick="copyToClipboard(this.id)"></div>
+            <div class="password" id="password-2" onclick="copyToClipboard(this.id)"></div>
+        </div>
+        <p id="copy-clipboard-text">(Click a field to copy the selected password to clipboard.)</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
